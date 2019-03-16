@@ -11,7 +11,7 @@ import time
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-ser = serial.Serial('/dev/cu.usbserial-14110', 9600, timeout=1)
+ser = serial.Serial('/dev/cu.usbserial-14130', 9600, timeout=1)
 ser.flush()
 
 data = {

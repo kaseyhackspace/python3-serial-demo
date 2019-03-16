@@ -4,14 +4,14 @@ Python to arduino serial sample
 """
 import serial
 import time
+
 __author__ = "Hackspace"
 __license__ = "MIT"
-
+# sirib0400
 
 def main():
     """ Main entry point of the app """
-    ser = serial.Serial('/dev/cu.usbserial-14110', 9600, timeout=1)
-    ser.reset_output_buffer()
+    ser = serial.Serial('/dev/cu.usbserial-14130', 9600, timeout=1)
     time.sleep(1)
     while True:
         ser.write(b'1')

@@ -19,16 +19,17 @@ void loop()
 
       celsius = random(50);
       fahrenheit = (celsius*1.8)+32;
+      //prints str to serial
       Serial.print(index);
       Serial.print(',');
       Serial.print(celsius);
       Serial.print(',');
-      Serial.print(fahrenheit);
+      Serial.println(fahrenheit);
       
-    }
+    } // if equal to 1
     else{
       
-      Serial.print("-1");
-    }
-  }
-}
+      Serial.println("-1");
+    } // else
+  } // if serial.available
+}// loop()
