@@ -15,11 +15,11 @@ def main():
     # Sleep for 1 second to wait for connection to establish
     time.sleep(1)
     while True:
-        # send 1 to arduino
+        # send 1 to arduino (arduino code waits for 1 input before writing anything. Check ard_serial.ino for more info
         ser.write(b'1')
         # sleep 1 second to wait for reply
         time.sleep(1)
-        # sleep 1 second to wait for reply
+        # if there is any input from arduino retrieve and print
         if ser.in_waiting:
             line = ser.readline()
             print(line.decode('unicode_escape'))
