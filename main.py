@@ -10,21 +10,20 @@ __license__ = "MIT"
 # sirib0400
 
 def main():
-    """ Main entry point of the app """
+    # start serial connection, change first argument based on microcontroller's serial port
     ser = serial.Serial('/dev/cu.usbserial-14130', 9600, timeout=1)
+    # Sleep for 1 second to wait for connection to establish
     time.sleep(1)
     while True:
+        # send 1 to arduino
         ser.write(b'1')
+        # sleep 1 second to wait for reply
         time.sleep(1)
-        line = ser.readline()
-        print(line.decode('unicode_escape'))
+        # sleep 1 second to wait for reply
+        if ser.in_waiting:
+            line = ser.readline()
+            print(line.decode('unicode_escape'))
 
-        '''
-        ser.write(b'0')
-        time.sleep(1)
-        line = ser.readline()
-        print(line.decode('unicode_escape'))
-        '''
     ser.close()
 
 
